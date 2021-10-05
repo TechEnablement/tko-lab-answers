@@ -75,16 +75,16 @@ services:
       - OTEL_EXPORTER=otlp
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otelcol:4317
       - OTEL_RESOURCE_ATTRIBUTES=application=tcb-local-lab4,service.name=the-cashdesk
-  the-coffee-lover:
-    image: sumo/the-coffee-bar-app:python-apps
-    container_name: the-coffee-lover
-    hostname: the-coffee-lover
-    command: ["opentelemetry-instrument", "python3", "src/bin/the_coffee_lover.py",
-              "--host=the-coffee-bar", "--port=8082", "--ratio=1"]
-    environment:
-      - OTEL_EXPORTER=otlp
-      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otelcol:4317
-      - OTEL_RESOURCE_ATTRIBUTES=application=tcb-local-lab4,service.name=the-coffee-lover
+  #the-coffee-lover:
+  #  image: sumo/the-coffee-bar-app:python-apps
+  #  container_name: the-coffee-lover
+  #  hostname: the-coffee-lover
+  #  command: ["opentelemetry-instrument", "python3", "src/bin/the_coffee_lover.py",
+  #            "--host=the-coffee-bar", "--port=8082", "--ratio=1"]
+  #  environment:
+  #    - OTEL_EXPORTER=otlp
+  #    - OTEL_EXPORTER_OTLP_ENDPOINT=http://otelcol:4317
+  #    - OTEL_RESOURCE_ATTRIBUTES=application=tcb-local-lab4,service.name=the-coffee-lover
   machine-svc:
     image: sumo/the-coffee-bar-app:ruby-apps
     container_name: machine-svc
